@@ -17,6 +17,9 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{color,soul}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -43,6 +46,14 @@
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %-------------------------
+% Custom, custom commands
+\setulcolor{blue}
+
+\newcommand{\myLink}[1]{
+\ul{\small{\normalfont{\textcolor{blue}{\href{#1}{#1}}}}}
+}
+
+%-------------------------
 % Custom commands
 \newcommand{\resumeItem}[2]{
   \item\small{
@@ -55,7 +66,7 @@
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}\vspace{2pt} % used to be -5pt
 }
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
@@ -70,24 +81,28 @@
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \begin{document}
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{https://austinj.net/}{\Large Austin Jackson}} & Email : \href{mailto:austinjckson@gmail.com}{austinjckson@gmail.com}\\
-  \href{https://austinj.net/}{https://austinj.net} & Mobile : +1-281-851-9106 \\
+  \textbf{\Large Austin Jackson} & Email : austinjckson@gmail.com\\
+  \myLink{https://www.linkedin.com/in/austindjackson} & Mobile : +1-281-851-9106 \\
 \end{tabular*}
+
+%-----------OBJECTIVE-----------------
+\section{Objective}
+  \small{Software Engineering Intern. Computer Science student with a focus on front-end and back-end development for web and software. Interested in innovative methods of utilizing data and technology to serve the needs of people. Seeking opportunities to learn, collaborate, and create solutions.}
+  
 
 %-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
       {University of Houston}{Houston, TX}
-      {Bachelor of Science in Computer Science; Transferred in, started Aug 2019.}{Aug. 2019 -- Dec. 2021}
-    \resumeSubheading
+      {Bachelor of Science in Computer Science}{Aug. 2019 -- Dec. 2021}
+     \resumeSubheading
       {Texas A\&M University}{College Station, TX}
-      {BS in Electronic Systems Engineering Technology; GPA: 3.55. Transferred out May 2019.}{Aug. 2017 -- May. 2019}
+      {Bachelor of Science in progress, Electronic Systems Engineering Technology}{Aug. 2017 -- Aug. 2019}
   \resumeSubHeadingListEnd
 
 
@@ -96,27 +111,18 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Texas A\&M University College of Engineering}{College Station, TX}
-      {Information Technology Student Technician}{Jan 2018 to Aug 2019}
-      \resumeItemListStart
-        \resumeItem{Student Technician}
-          {Responsible for software solutions, hardware repair for Nuclear Engineering Department. Implemented use of Chocolatey to automate custom software package deployment. Implemented PXE workflow to deploy complex Windows images to the College of Engineering. Answering Help Desk phone calls and email correspondence.}
-      \resumeItemListEnd
+      {\myLink{https://engineering.tamu.edu/nuclear/profiles/staff.html}}{Jan 2018 to Aug 2019}
+      \par{\textit{\small{Information Technology Student Technician}}: Responsible for software solutions, hardware repair for Nuclear Engineering Department. Implemented use of Chocolatey to automate custom software package deployment. Implemented PXE workflow to deploy complex Windows images to the College of Engineering. Answering Help Desk phone calls and email correspondence.}	
 
     \resumeSubheading
-      {\href{https://www.salesnexus.com/}{SalesNexus}}{Houston, TX}
-      {Software Development Intern}{Jan 2016 - May 2016}
-      \resumeItemListStart
-        \resumeItem{Quality Assurance}
-          {Thoroughly testing CRM and marketing automation web platform features and writing automated unit tests. Developed unit tests implementing Selenium for browser automation.}
-      \resumeItemListEnd
+      {SalesNexus}{Houston, TX}
+      {\myLink{https://www.salesnexus.com/}}{Jan 2016 - May 2016}
+    	  \par{\textit{\small{Software Development Intern}}: Thoroughly testing CRM and marketing automation web platform features and writing automated unit tests. Developed unit tests implementing Selenium for browser automation.}
 
     \resumeSubheading
-      {\href{http://www.getkeypad.co/}{Keypad}}{International}
-      {Web Developer}{Nov 2014 - Nov 2015}
-      \resumeItemListStart
-        \resumeItem{Web Developer}
-          {Designed and developed static front-end to showcase the launch of macOS desktop app. Rated Best Communication App of 2014 by iMore.com.}
-      \resumeItemListEnd
+      {Keypad}{International}
+      {\myLink{http://www.getkeypad.co/}}{Nov 2014 - Nov 2015}
+      \par{\textit{Web Developer}: Designed and developed static front-end to showcase the launch of macOS desktop app. Rated Best Communication App of 2014 by iMore.com.}
 
   \resumeSubHeadingListEnd
 
@@ -124,16 +130,16 @@
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
-    \resumeSubItem{\href{https://cougargrades.io/}{CougarGrades.io}}
-      {Open source React app for analyzing grade distribution data for University of Houston courses. Paired with a Python scripts to restructure FOIA acquired CSV data into Firebase-ready NoSQL. Over 1000 unique visitors since September 2019 launch.}
-    \resumeSubItem{\href{https://github.com/au5ton/Roboruri}{Roboruri}}
-      {Open source Telegram chatbot for searching, indexing, and referencing anime across multiple websites. Over 200 active users at peak.}
-    \resumeSubItem{\href{https://github.com/au5ton/tamuhack2019}{LipsumLogin}}
-      {TAMUhack (2019) hackathon project for secure, passwordless logins using Ethereum/web3 cryptographic signatures.}
-    \resumeSubItem{\href{https://github.com/au5ton/codered-steganography}{Stego}}
-      {CodeRED Liftoff (2015) hackathon project for proof-of-concept steganography with PNG images.}
-    \resumeSubItem{\href{https://github.com/au5ton/watchdox}{Watchdox}}
-      {Reverse engineering digital rights management (DRM) used by Blackberry Workspaces to export secure documents.}
+    \resumeSubItem{CougarGrades.io}
+      {Open source React app for analyzing grade distribution data for University of Houston courses. Paired with a Python scripts to restructure FOIA acquired CSV data into Firebase-ready NoSQL. Over 1600 unique visitors since September 2019 launch. Available at \myLink{https://cougargrades.io/}}
+    \resumeSubItem{Roboruri}
+      {Open source Telegram chatbot for searching, indexing, and referencing anime across multiple websites. Over 200 active users at peak. Available at \myLink{https://github.com/au5ton/Roboruri}}
+    \resumeSubItem{LipsumLogin}
+      {TAMUhack (2019) hackathon project for secure, passwordless logins using Ethereum/web3 cryptographic signatures. Available at \myLink{https://github.com/au5ton/tamuhack2019}}
+    \resumeSubItem{Stego}
+      {CodeRED Liftoff (2015) hackathon project for proof-of-concept steganography with PNG images. Available at \myLink{https://git.io/vRX9M}}
+    \resumeSubItem{Watchdox}
+      {Reverse engineering digital rights management (DRM) used by Blackberry Workspaces to export secure documents. Available at \myLink{https://github.com/au5ton/watchdox}}
   \resumeSubHeadingListEnd
 
 %
@@ -143,6 +149,13 @@
     \resumeSubItem{Languages}{Javascript, Python, C++, Java, Bash, MATLAB}
     \resumeSubItem{Technologies}{Node.js, React, Docker, SQL, Firebase, GCE, Git/Github, Maven, Sass, Web3, Arduino}
     \resumeSubItem{Interests}{Open source technologies, Education, Information Security, Cryptocurrencies, Civil rights}
+  \resumeSubHeadingListEnd
+
+%--------Extracurricular??-----------
+\section{Extracurricular}
+  \resumeSubHeadingListStart
+  	\item{Teachers Assistant and Volunteer Tutor for High School Computer Science courses from Fall 2014 to Spring 2017.}\vspace{-4pt}
+  	\item{Annual Texas Computer Science UIL regional competitor.}\vspace{-4pt}
   \resumeSubHeadingListEnd
 
 
